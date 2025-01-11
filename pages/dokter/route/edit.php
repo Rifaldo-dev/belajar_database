@@ -10,17 +10,17 @@ if (!isset($_GET['id'])) {
 }
 
 // Ambil ID dari query string
-$id = "Need Implementation";
+$id = $_GET['id'];
 
 // Query untuk mengambil data dokter berdasarkan ID
-$sql = "Need Implementation";
-$query = "Need Implementation";
+$sql = "SELECT * FROM dokter WHERE id=$id ";
+$query = mysqli_query(mysql: $db, query: $sql);
 
 // Mengambil data dokter dalam bentuk array
-$dokter = "Need Implementation";
+$dokter = mysqli_fetch_assoc(result: $query);
 
 // Jika data dokter tidak ditemukan, tampilkan pesan error
-if ("Need Implementation" < 1) {
+if (mysqli_num_rows(result: $query) < 1) {
     die("data tidak ditemukan...");
 }
 

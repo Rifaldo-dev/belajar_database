@@ -10,11 +10,11 @@ if (!isset($_GET['id'])) {
 }
 
 // Ambil ID dari query string
-$id = "Need Implementation";
+$id = $_GET['id'];
 
 // Query untuk mengambil data administrator berdasarkan ID
-$sql = "Need Implementation";
-$query = "Need Implementation";
+$sql = "SELECT * FROM dokter WHERE id=$id ";
+$query = mysqli_query(mysql: $db, query: $sql);
 
 // Mengambil data administrator dalam bentuk array
 $administrator = "Need Implementation";

@@ -10,19 +10,20 @@ if (!isset($_GET['id'])) {
 }
 
 // Ambil ID dari query string
-$id = "Need Implementation";
+$id = $_GET['id'];
 
 // Query untuk mengambil data pasien berdasarkan ID
-$sql = "Need Implementation";
-$query = "Need Implementation";
+$sql = "SELECT * FROM pasien WHERE id=$id ";
+$query = mysqli_query(mysql: $db, query: $sql);
 
 // Mengambil data pasien dalam bentuk array
-$pasien = "Need Implementation";
+$pasien = mysqli_fetch_assoc(result: $query);
 
 // Jika data pasien tidak ditemukan, tampilkan pesan error
-if ("Need Implementation" < 1) {
+if (mysqli_num_rows(result: $query) < 1) {
     die("data tidak ditemukan...");
 }
+
 
 ?>
 
@@ -67,6 +68,7 @@ if ("Need Implementation" < 1) {
             </p>
 
             <!-- Radio buttons untuk memilih jenis kelamin -->
+    
             <p>
                 <label for="jenis_kelamin">Jenis Kelamin: </label>
                 <?php $jk = $pasien['jenis_kelamin']; ?>

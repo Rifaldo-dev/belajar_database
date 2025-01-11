@@ -7,17 +7,20 @@ include("../../../config.php");
 if (isset($_POST['simpan'])) {
 
     // Mengambil data dari formulir yang dikirim dengan metode POST
-    $nama = "Need Implementation";
-    $alamat = "Need Implementation";
-    $tgl_lahir = "Need Implementation";
-    $jenis_kelamin = "Need Implementation";
-    $no_hp = "Need Implementation";
+    $id = $_POST['id'];
+    $nama = $_POST['nama'];
+    $alamat = $_POST['alamat'];
+    $tgl_lahir = $_POST['tgl_lahir'];
+    $jenis_kelamin = $_POST['jenis_kelamin'] ;
+    $no_hp = $_POST['no_hp'];
 
     // Membuat query untuk memperbarui data pasien di database
-    $sql = "Need Implementation";
+    $sql = "UPDATE pasien
+     SET nama_lengkap='$nama', alamat='$alamat', tgl_lahir='$tgl_lahir', jenis_kelamin='$jenis_kelamin', no_hp='$no_hp' 
+     WHERE id=$id";
 
     // Menjalankan query untuk memperbarui data
-    $query = "Need Implementation";
+    $query = mysqli_query($db, $sql);
 
     // Mengecek apakah query berhasil dijalankan
     if ($query) {

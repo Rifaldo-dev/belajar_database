@@ -7,11 +7,11 @@ include("../../../config.php");
 if (isset($_POST['simpan'])) {
 
     // Mengambil data dari formulir yang dikirim dengan metode POST
-    $id = "Need Implementation";
-    $nama = "Need Implementation";
-    $tgl_lahir = "Need Implementation";
-    $no_hp = "Need Implementation";
-    $spesialis = "Need Implementation";
+
+    $nama = $_POST['nama'];
+    $tgl_lahir = $_POST['tgl_lahir'];
+    $no_hp = $_POST['no_hp'];
+    $spesialis = $_POST[];
     $waktu_kerja = "Need Implementation";
 
     // Membuat query untuk memperbarui data dokter di database
